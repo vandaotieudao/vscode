@@ -1,15 +1,11 @@
 var express = require("express");
+var app = express();
 const mongoose = require("mongoose");
 
 const connectDB = async () => {
     try {
         mongoose.set("strictQuery", false);
-        await mongoose.connect('mongodb+srv://root:root@cluster0.gyhxn3j.mongodb.net/cluster0?retryWrites=true&w=majority',{
-            useCreateIndex: true,
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            useFindAndModify: false
-        })
+        await mongoose.connect('mongodb+srv://root:root@cluster0.gyhxn3j.mongodb.net/?retryWrites=true&w=majority')
         console.log("DB connect")
     }catch(error){
         console.log("error")
@@ -20,7 +16,6 @@ const connectDB = async () => {
 
 connectDB();
 
-const app = express();
 app.get('/', (res, rep) => res.setEncoding('Hello'))
 app.listen(3000, () => {
     console.log("Created ");
