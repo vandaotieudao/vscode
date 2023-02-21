@@ -1,6 +1,8 @@
 var express = require("express");
 var app = express();
+app.use(express.json())
 const mongoose = require("mongoose");
+const authRouter = require('./routes/auth')
 
 const connectDB = async () => {
     try {
@@ -16,7 +18,8 @@ const connectDB = async () => {
 
 connectDB();
 
-app.get('/', (res, rep) => res.setEncoding('Hello'))
+
+app.use('/api/auth', authRouter)
 app.listen(3000, () => {
     console.log("Created ");
 });
