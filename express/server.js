@@ -3,6 +3,7 @@ var app = express();
 app.use(express.json())
 const mongoose = require("mongoose");
 const authRouter = require('./routes/auth')
+const postRouter = require('./routes/post')
 
 const connectDB = async () => {
     try {
@@ -20,6 +21,7 @@ connectDB();
 
 
 app.use('/api/auth', authRouter)
+app.use('/api/post', postRouter)
 app.listen(3000, () => {
     console.log("Created ");
 });

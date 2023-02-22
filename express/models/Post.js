@@ -6,13 +6,21 @@ const PostSchema = new mongoose.Schema({
         type: String,
         require: true
     },
-    desc: {
+    content: {
         type: String,
         required: true
     },
     user:{
-        type: Schema.Types.ObjectId,
+        type: schema.Types.ObjectId,
         ref: "users"
+    },
+    image: {
+        type: String,
+        required: false
+    }, 
+    video :{
+        type:  String,
+        required: false
     }
 
 })
