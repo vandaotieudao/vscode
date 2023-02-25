@@ -4,6 +4,8 @@ const routes = express.Router()
 
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
+const routers = require('./post')
+const verifyToken = require('../middleware/auth')
 
 routes.post('/register', async(req, res)=> {
     const { username, password} = req.body
@@ -18,7 +20,7 @@ routes.post('/register', async(req, res)=> {
         const newUser = new User({username, password})
         await newUser.save();
 
-        const accesstoken = jwt.sign({userId: newUser},"dghdghdfhd")
+        const accesstoken = jwt.sign({userId: newUser._id},"dghdghdfhd")
 
          res.json({success: true, message:'user created', accesstoken})
     } catch (error) {
@@ -45,4 +47,6 @@ routes.post('/login', async(req, res)=> {
         
     }
 })
+
+
 module.exports = routes

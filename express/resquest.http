@@ -1,7 +1,51 @@
-POST http://localhost:3000/api/post 
+POST http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-   "title": "fsg",
-   "content": "Sgds"
+   "username": "anhtran3",
+   "password": "123456"
 }
+### LOGIN 
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+   "username": "anhtran3",
+   "password": "123456"
+}
+### CREATE
+POST http://localhost:3000/api/post
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5YWI5MWEzNzFkNDcwMWJlN2Y0NWEiLCJpYXQiOjE2NzczMDY3ODB9.llcdXo7EPkMhY4BWheNC0f1wi6M6l_HMkAr4dGNQVkM
+
+{
+   "title": "anhtran2",
+   "content": "123456789"
+}
+### GET ALL
+GET http://localhost:3000/api/post/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5YWI5MWEzNzFkNDcwMWJlN2Y0NWEiLCJpYXQiOjE2NzczMDY3ODB9.llcdXo7EPkMhY4BWheNC0f1wi6M6l_HMkAr4dGNQVkM
+
+### GET BY ID
+GET http://localhost:3000/api/post/63f9abbfa371d4701be7f45f
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5YWI5MWEzNzFkNDcwMWJlN2Y0NWEiLCJpYXQiOjE2NzczMDY3ODB9.llcdXo7EPkMhY4BWheNC0f1wi6M6l_HMkAr4dGNQVkM
+
+###UPDATE
+PUT  http://localhost:3000/api/post/63f9abbfa371d4701be7f45f
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5YWI5MWEzNzFkNDcwMWJlN2Y0NWEiLCJpYXQiOjE2NzczMDY3ODB9.llcdXo7EPkMhY4BWheNC0f1wi6M6l_HMkAr4dGNQVkM
+
+{
+   "title": "new",
+   "content": "new"
+}
+### DELETE ALL
+DELETE  http://localhost:3000/api/post/
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5YWI5MWEzNzFkNDcwMWJlN2Y0NWEiLCJpYXQiOjE2NzczMDY3ODB9.llcdXo7EPkMhY4BWheNC0f1wi6M6l_HMkAr4dGNQVkM
+### DELETE BY ID
+DELETE  http://localhost:3000/api/post/63f9ac22a371d4701be7f466
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Y5YWI5MWEzNzFkNDcwMWJlN2Y0NWEiLCJpYXQiOjE2NzczMDY3ODB9.llcdXo7EPkMhY4BWheNC0f1wi6M6l_HMkAr4dGNQVkM
